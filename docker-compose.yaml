@@ -15,7 +15,7 @@ services:
     networks:
       - rotten_net
     ports:
-      - 8081:5000
+      - 8082:5000
     environment:
       MONGODB_DB: admin
       MONGODB_HOST: mongodb
