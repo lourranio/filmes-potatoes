@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 networks:
   rotten_net:
     driver: bridge
@@ -9,13 +9,13 @@ volumes:
 services:
   web:
     image: fabricioveronez/rotten-potatoes:v1
-    build: 
+    build:
       dockerfile: Dockerfile
       context: ./src/
     networks:
       - rotten_net
     ports:
-      - 8080:5000
+      - 8081:5000
     environment:
       MONGODB_DB: admin
       MONGODB_HOST: mongodb
@@ -31,5 +31,4 @@ services:
       - mongo_vol:/data/db
     environment:
       MONGO_INITDB_ROOT_USERNAME: mongouser
-      MONGO_INITDB_ROOT_PASSWORD: mongopwd    
-      
+      MONGO_INITDB_ROOT_PASSWORD: mongopwd
