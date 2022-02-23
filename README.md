@@ -84,6 +84,36 @@ Aqui vou usar o Rancher
 
 ## 🚀 Deployment <a name = "deployment"></a>
 
+1. Voce Cria uma imagem
+
+```
+nerdctl build -t <nome-hub-docker/<nome-aplicacao:<versao>>>
+nerdctl build -t lourranio/filmes:v1
+```
+
+1.1
+
+```
+nerdctl build -t lourranio/filmes:v1
+```
+
+2. Voce faz o login no terminal do Hub Docker
+
+```
+nerdctl login
+```
+
+3. Faz o push da Imagem para o Hub Docker
+
+```
+nerdctl push lourranio/filmes-potatoes:v1
+```
+
+<p align="left">
+  <a href="" rel="noopener">
+ <img src="./imagens/nerdctl-push.PNG" alt="Project logo"></a>
+</p>
+
 ## ⛏️ Links <a name = "links"></a>
 
 - [hubdocker](https://hub.docker.com/) - Docker Images
