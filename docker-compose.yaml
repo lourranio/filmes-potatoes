@@ -8,7 +8,7 @@ volumes:
 
 services:
   web:
-    image: fabricioveronez/rotten-potatoes:v1
+    image: lourranio/filmes-potatoes:v1
     build:
       dockerfile: Dockerfile
       context: ./src/

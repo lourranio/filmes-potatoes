@@ -87,23 +87,29 @@ Aqui vou usar o Rancher
 1. Voce Cria uma imagem
 
 ```
-nerdctl build -t <nome-hub-docker/<nome-aplicacao:<versao>>>
+nerdctl build -t <nome-dockerhub/<nome-aplicacao:<versao>>>
 nerdctl build -t lourranio/filmes:v1
 ```
 
 1.1
 
 ```
-nerdctl build -t lourranio/filmes:v1
+nerdctl build -t lourranio/filmes:v1 .
 ```
 
-2. Voce faz o login no terminal do Hub Docker
+2. Voce faz o login no terminal do dockerhub
 
 ```
 nerdctl login
 ```
 
-3. Faz o push da Imagem para o Hub Docker
+3. Faz o push da imagem para o dockerhub
+
+```
+nerdctl push lourranio/filmes-potatoes:v1
+```
+
+4. Faz o push da imagem para o dockerhub
 
 ```
 nerdctl push lourranio/filmes-potatoes:v1
@@ -111,8 +117,30 @@ nerdctl push lourranio/filmes-potatoes:v1
 
 <p align="left">
   <a href="" rel="noopener">
- <img src="./imagens/nerdctl-push.PNG" alt="Project logo"></a>
+ <img src="./imagens/nerdctl-push.PNG" alt="dockerhub image"></a>
 </p>
+
+5. Subir a aplicação
+
+```
+nerdctl push lourranio/filmes-potatoes:v1
+```
+
+<p align="left">
+  <a href="" rel="noopener">
+ <img src="./imagens/nerdctl-push.PNG" alt="dockerhub image"></a>
+</p>
+
+>
+
+Explicação:
+
+- 1 Primeiro voce gera a imagem
+- 2 Faz o push para o dockerhub
+
+Detalhes:
+
+- `nerdctl image ls` é igual a `nerdctl images`
 
 ## ⛏️ Links <a name = "links"></a>
 

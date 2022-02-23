@@ -48,21 +48,21 @@ spec:
         app: movies
     spec:
       containers:
-      - name: movies
-        image: fabricioveronez/rotten-potatoes:v1
-        ports:
-          - containerPort: 5000
-        env:
-          - name: MONGODB_DB
-            value: admin
-          - name: MONGODB_HOST
-            value: mongodb-service  
-          - name: MONGODB_PORT
-            value: "27017"
-          - name: MONGODB_USERNAME
-            value: mongouser
-          - name: MONGODB_PASSWORD
-            value: mongopwd
+        - name: movies
+          image: lourranio/filmes-potatoes:v1
+          ports:
+            - containerPort: 5000
+          env:
+            - name: MONGODB_DB
+              value: admin
+            - name: MONGODB_HOST
+              value: mongodb-service
+            - name: MONGODB_PORT
+              value: "27017"
+            - name: MONGODB_USERNAME
+              value: mongouser
+            - name: MONGODB_PASSWORD
+              value: mongopwd
 ---
 apiVersion: v1
 kind: Service
@@ -72,7 +72,7 @@ spec:
   selector:
     app: movies
   ports:
-  - port: 80
-    targetPort: 5000
-    nodePort: 30000
+    - port: 80
+      targetPort: 5000
+      nodePort: 30000
   type: LoadBalancer
